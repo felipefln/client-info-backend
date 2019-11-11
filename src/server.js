@@ -24,8 +24,9 @@ console.log(Error, err.message);
 
 
 app.use(cors())
-app.use('/files', express.static(path.resolve(__dirname, '..', 'uploads')))
 app.use(express.json())
+app.use('/files', express.static(path.resolve(__dirname, '..', 'uploads')))
+
 app.use(routes)
 
 server.listen(Number(process.env.PORT) || 5000);
